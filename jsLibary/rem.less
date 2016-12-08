@@ -1,0 +1,40 @@
+@charset "UTF-8";
+.data-dpr(id,@ele,@size){
+  [data-dpr="3"] .@{ele}{
+    font-size: @size*3;
+  };
+  [data-dpr="2"] .@{ele}{
+    font-size: @size*2;
+  };
+  [data-dpr="1"] .@{ele}{
+    font-size: @size;
+  };
+};
+.data-dpr(class,@ele,@size){
+  [data-dpr="3"] #@{ele}{
+    font-size: @size*3;
+  };
+  [data-dpr="2"] #@{ele}{
+    font-size: @size*2;
+  };
+  [data-dpr="1"] #@{ele}{
+    font-size: @size;
+  };
+};
+.data-dpr(ele,@ele,@size){
+  [data-dpr="3"] @{ele}{
+    font-size: @size*3;
+  };
+  [data-dpr="2"] @{ele}{
+    font-size: @size*2;
+  };
+  [data-dpr="1"] @{ele}{
+    font-size: @size;
+  };
+};
+
+@basic-size:64px;
+.rem(@style,@size){
+  @{style}:unit((@size/@basic-size),rem);
+}
+
